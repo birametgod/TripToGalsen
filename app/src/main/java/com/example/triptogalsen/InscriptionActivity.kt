@@ -4,17 +4,19 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_inscription.*
 
-class InscriptionActivity : AppCompatActivity() {
+class InscriptionActivity : AppCompatActivity() , View.OnClickListener{
 
     private lateinit var auth: FirebaseAuth
     private lateinit var database : FirebaseDatabase
     private lateinit var myDatabaseReference : DatabaseReference
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_inscription)
@@ -23,10 +25,14 @@ class InscriptionActivity : AppCompatActivity() {
         database = FirebaseDatabase.getInstance()
         myDatabaseReference = database.reference.child("Users")
 
-        val emailIns = emailInscription.text
-        val passwordIns = passwordInputInscription.text
-        signUp_process.setOnClickListener {
-            signUp(emailIns.toString(),passwordIns.toString())
+        signUp_process.setOnClickListener(this)
+    }
+
+    override fun onClick(view: View) {
+        when(view.id){
+            R.id.signUp_process -> {
+                signUp(emailInscription.text.toString(),passwordInputInscription.text.toString())
+            }
         }
     }
 
@@ -54,7 +60,8 @@ class InscriptionActivity : AppCompatActivity() {
     }
 
     private fun updateUi(){
-        val myIntent = Intent(this,HomeActivity::class.java)
+        val myIntent = SplashActivity.openHomeActivity(this)
         startActivity(myIntent)
+        finish()
     }
 }
