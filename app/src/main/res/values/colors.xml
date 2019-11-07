@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorYellowSenegal">#FAE289</color>
+    <color name="colorRedSenegal">#C32929</color>
+    <color name="colorGray">#BDBDBD</color>
+    <color name="colorWhite">#FFFFFF</color>
+</resources>
