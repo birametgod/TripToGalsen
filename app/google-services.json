@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "897086466598",
+    "firebase_url": "https://triptogalsen.firebaseio.com",
+    "project_id": "triptogalsen",
+    "storage_bucket": "triptogalsen.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:897086466598:android:3dace930818205625594e7",
+        "android_client_info": {
+          "package_name": "com.example.triptogalsen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "897086466598-h0ro79b5hd53fjboc4bcllbi1r9qgvoq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.triptogalsen",
+            "certificate_hash": "b7668ac64d15e5c1467decbbe381d55504ccc8f1"
+          }
+        },
+        {
+          "client_id": "897086466598-52othirjspakr35pkjfk4gvd6fcbtka3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoxENCHoMXRdy36MWrPlJvslUjfle8zMc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "897086466598-52othirjspakr35pkjfk4gvd6fcbtka3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
