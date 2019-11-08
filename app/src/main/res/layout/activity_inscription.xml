@@ -1,113 +1,163 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    tools:context=".ConnexionActivity">
+    android:layout_height="match_parent">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="149dp"
         android:layout_height="249dp"
+        android:layout_marginBottom="464dp"
         android:src="@drawable/senegal"
-        android:layout_marginBottom="42dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.534"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
         android:id="@+id/pseudo"
-        android:layout_width="373dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:ems="10"
-        android:paddingBottom="30dp"
+        android:hint="Pseudo"
         android:inputType="textPersonName"
-        android:layout_marginBottom="22dp"
-        android:hint="Pseudo" />
+        android:paddingBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@id/lastname"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView" />
 
     <EditText
         android:id="@+id/lastname"
-        android:layout_width="373dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:ems="10"
-        android:paddingBottom="30dp"
+        android:hint="Nom"
         android:inputType="textPersonName"
-        android:layout_marginBottom="22dp"
-        android:hint="Nom" />
+        android:paddingBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@id/firstName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pseudo" />
 
     <EditText
         android:id="@+id/firstName"
-        android:layout_width="373dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:ems="10"
-        android:paddingBottom="30dp"
+        android:hint="Prenom"
         android:inputType="textPersonName"
-        android:layout_marginBottom="22dp"
-        android:hint="Prenom" />
+        android:paddingBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@id/birthDate"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lastname" />
 
     <EditText
         android:id="@+id/birthDate"
-        android:layout_width="373dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
         android:ems="10"
-        android:paddingBottom="30dp"
+        android:hint="Date de naissance"
         android:inputType="date"
-        android:layout_marginBottom="22dp"
-        android:hint="Date de naissance" />
+        android:paddingBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@id/nationalite"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/calendarInscription"
+        app:layout_constraintTop_toBottomOf="@id/firstName" />
+
+    <ImageView
+        android:id="@+id/calendarInscription"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginRight="8dp"
+        android:src="@drawable/calendar"
+        app:layout_constraintBottom_toTopOf="@id/nationalite"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/birthDate"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/firstName" />
+
 
     <EditText
         android:id="@+id/nationalite"
-        android:layout_width="373dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:ems="10"
-        android:paddingBottom="30dp"
+        android:hint="Nationalité"
         android:inputType="textPersonName"
-        android:layout_marginBottom="22dp"
-        android:hint="Nationalité" />
+        android:paddingBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@id/emailInscription"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/birthDate" />
 
     <EditText
         android:id="@+id/emailInscription"
-        android:layout_width="373dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:ems="10"
-        android:paddingBottom="30dp"
+        android:hint="Email"
         android:inputType="textEmailAddress"
-        android:layout_marginBottom="22dp"
-        android:hint="Email" />
+        android:paddingBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@id/passwordInputInscription"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nationalite" />
 
     <EditText
         android:id="@+id/passwordInputInscription"
-        android:layout_width="373dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="22dp"
         android:ems="10"
+        android:hint="Password"
         android:inputType="textPassword"
         android:paddingBottom="30dp"
-        android:layout_marginBottom="22dp"
         app:cornerRadius="18dp"
-        android:hint="Password"/>
+        app:layout_constraintBottom_toTopOf="@id/signUp_process"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/emailInscription" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/signUp_process"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="373dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:strokeColor="@color/colorRedSenegal"
-        app:strokeWidth="25dp"
         android:text="Valider"
-        android:textStyle="bold"
         android:textColor="@color/colorWhite"
-        android:layout_marginBottom="22dp"
-        />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/passwordInputInscription"
+        app:strokeColor="@color/colorRedSenegal"
+        app:strokeWidth="25dp" />
 
-</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
