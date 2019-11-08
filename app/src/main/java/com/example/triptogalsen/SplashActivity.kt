@@ -35,7 +35,7 @@ class SplashActivity : AppCompatActivity() {
 
         myHandler = Handler()
         myHandler.postDelayed({
-            val myIntent = Companion.openConnexionActivity(this)
+            val myIntent = openConnexionActivity(this)
             startActivity(myIntent)
             finish()
         },splashTime)

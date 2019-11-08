@@ -9,9 +9,9 @@ import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.wajahatkarim3.easyvalidation.core.view_ktx.nonEmpty
+import com.wajahatkarim3.easyvalidation.core.view_ktx.validEmail
 import kotlinx.android.synthetic.main.activity_connexion.*
-import kotlinx.android.synthetic.main.activity_inscription.*
-import kotlin.math.sign
 
 class ConnexionActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -24,20 +24,6 @@ class ConnexionActivity : AppCompatActivity(), View.OnClickListener {
         auth = FirebaseAuth.getInstance()
         signIn.setOnClickListener(this)
         signUp.setOnClickListener(this)
-
-       // signUp.setOnClickListener {
-         //   val myIntent = Intent(this,InscriptionActivity::class.java)
-          //  startActivity(myIntent)
-        //}
-
-        //signIn.setOnClickListener {
-         //   val emailUser = loginInput.text
-         //   val passwordUser = passwordInput.text
-
-        //    signIn(loginInput.text.toString(),passwordInput.text.toString())
-        //}
-
-
     }
 
     override fun onStart() {
@@ -53,7 +39,18 @@ class ConnexionActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(view: View) {
         when(view.id){
             R.id.signIn -> {
-                signIn(loginInput.text.toString(),passwordInput.text.toString())
+                val isPasswordValid = passwordInput.nonEmpty(){
+                    passwordInput.error = "Ne doit pas être vide"
+                }
+
+                val isEmailValid = loginInput.validEmail {
+                    loginInput.error = "Mail invalid"
+                }
+
+                if (isPasswordValid && isEmailValid){
+                    signIn(loginInput.text.toString(),passwordInput.text.toString())
+                }
+
             }
             R.id.signUp -> {
                val myIntent =  SplashActivity.openInscriptionActivity(this)

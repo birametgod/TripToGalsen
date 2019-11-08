@@ -17,10 +17,12 @@
         <activity android:name=".HomeActivity"></activity>
         <activity
             android:name=".InscriptionActivity"
-            android:theme="@style/AppTheme.ConnexionScreen" />
+            android:theme="@style/AppTheme.ConnexionScreen"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ConnexionActivity"
-            android:theme="@style/AppTheme.ConnexionScreen" />
+            android:theme="@style/AppTheme.ConnexionScreen"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".SplashActivity"
             android:theme="@style/AppTheme.SplashScreen">
