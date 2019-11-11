@@ -4,18 +4,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/Widget.MaterialComponents.CardView"
     android:id="@+id/my_card_view_picture"
-    android:layout_width="150dp"
-    android:layout_height="wrap_content"
+    android:layout_width="140dp"
+    android:layout_height="130dp"
     android:layout_marginLeft="@dimen/mtrl_card_spacing"
     android:layout_marginTop="@dimen/mtrl_card_spacing"
     android:layout_marginRight="@dimen/mtrl_card_spacing"
-    app:cardPreventCornerOverlap="false"
+    android:layout_marginBottom="16dp"
     android:minHeight="200dp">
 
     <ImageView
         android:id="@+id/picture_item_famous"
         android:layout_width="match_parent"
-        android:layout_height="155dp"
+        android:layout_height="110dp"
         android:scaleType="centerCrop" />
 
     <LinearLayout
@@ -28,18 +28,24 @@
     <LinearLayout
         android:id="@+id/placeNameHolder"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="20dp"
         android:layout_gravity="bottom"
         android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="15dp"
+            android:layout_gravity="center"
+            android:src="@drawable/maps_and_flags"/>
 
         <TextView
             android:id="@+id/location_picture"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
+            android:layout_gravity="center"
             android:gravity="start"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
+            android:textStyle="bold"
+            android:textSize="15sp"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@android:color/black" />
 

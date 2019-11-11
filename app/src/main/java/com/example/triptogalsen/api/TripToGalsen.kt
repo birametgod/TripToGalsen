@@ -1,6 +1,7 @@
 package com.example.triptogalsen.api
 
 import com.example.triptogalsen.models.CloutLocationModel
+import com.example.triptogalsen.models.Sites
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -12,6 +13,9 @@ interface TripToGalsen {
 
     @GET("cloutLocation.json")
     fun getCloutLocation() : Call<List<CloutLocationModel>>
+
+    @GET("sites.json")
+    fun getSites() : Call<List<Sites>>
 
     companion object {
         fun buildRetrofit() : TripToGalsen{

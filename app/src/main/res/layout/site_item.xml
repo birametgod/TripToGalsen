@@ -3,22 +3,19 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/Widget.MaterialComponents.CardView"
-    android:id="@+id/my_card_view"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:id="@+id/my_card_view_picture"
+    android:layout_width="250dp"
+    android:layout_height="125dp"
     android:layout_marginLeft="@dimen/mtrl_card_spacing"
     android:layout_marginTop="@dimen/mtrl_card_spacing"
     android:layout_marginRight="@dimen/mtrl_card_spacing"
-    android:layout_marginBottom="16dp"
-    app:cardElevation="8dp"
-    app:cardCornerRadius="10dp"
-    app:cardUseCompatPadding="false"
+    android:layout_marginBottom="@dimen/mtrl_card_spacing"
     android:minHeight="200dp">
 
     <ImageView
-        android:id="@+id/picture_item"
+        android:id="@+id/picture_item_famous"
         android:layout_width="match_parent"
-        android:layout_height="155dp"
+        android:layout_height="100dp"
         android:scaleType="centerCrop" />
 
     <LinearLayout
@@ -31,7 +28,7 @@
     <LinearLayout
         android:id="@+id/placeNameHolder"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="20dp"
         android:layout_gravity="bottom"
         android:orientation="horizontal">
 
@@ -41,13 +38,15 @@
             android:src="@drawable/maps_and_flags"
             android:layout_gravity="center"/>
 
+
         <TextView
-            android:id="@+id/location"
+            android:id="@+id/location_picture"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="start"
             android:textStyle="bold"
+            android:textSize="15sp"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@android:color/black" />
 
