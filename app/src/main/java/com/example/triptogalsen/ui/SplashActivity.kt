@@ -1,26 +1,27 @@
-package com.example.triptogalsen
+package com.example.triptogalsen.ui
 
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import com.example.triptogalsen.R
 
 class SplashActivity : AppCompatActivity() {
 
     companion object {
         fun openConnexionActivity(context: Context) : Intent{
-            val myIntent = Intent(context,ConnexionActivity::class.java)
+            val myIntent = Intent(context, ConnexionActivity::class.java)
             return myIntent
         }
 
         fun openInscriptionActivity(context: Context): Intent{
-            val myIntent = Intent(context,InscriptionActivity::class.java)
+            val myIntent = Intent(context, InscriptionActivity::class.java)
             return myIntent
         }
 
         fun openHomeActivity(context: Context) : Intent{
-            val myIntent = Intent(context,HomeActivity::class.java)
+            val myIntent = Intent(context, HomeActivity::class.java)
             return myIntent
         }
     }
@@ -34,7 +35,8 @@ class SplashActivity : AppCompatActivity() {
 
         myHandler = Handler()
         myHandler.postDelayed({
-            val myIntent = openConnexionActivity(this)
+            val myIntent =
+                openConnexionActivity(this)
             startActivity(myIntent)
             finish()
         },splashTime)

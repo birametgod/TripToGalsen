@@ -1,7 +1,8 @@
-package com.example.triptogalsen
+package com.example.triptogalsen.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.triptogalsen.R
 
 class MainActivity : AppCompatActivity() {
 

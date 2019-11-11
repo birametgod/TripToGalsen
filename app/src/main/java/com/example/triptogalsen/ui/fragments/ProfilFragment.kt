@@ -1,4 +1,4 @@
-package com.example.triptogalsen
+package com.example.triptogalsen.ui.fragments
 
 
 import android.content.Intent
@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.triptogalsen.R
+import com.example.triptogalsen.ui.ConnexionActivity
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_profil.view.*
 
@@ -25,7 +27,7 @@ class ProfilFragment : Fragment() {
         view.signOut.setOnClickListener {
             Log.i("CLICK","DECONNECTER")
             FirebaseAuth.getInstance().signOut()
-            val myIntent = Intent(activity,ConnexionActivity::class.java)
+            val myIntent = Intent(activity, ConnexionActivity::class.java)
             startActivity(myIntent)
         }
 
