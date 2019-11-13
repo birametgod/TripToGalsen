@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.example.triptogalsen.R
@@ -34,9 +35,11 @@ class CloutLocationFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
+
         TripToGalsen.buildRetrofit().getCloutLocation().enqueue(object:
             Callback<List<CloutLocationModel>> {
             override fun onFailure(call: Call<List<CloutLocationModel>>, t: Throwable) {
+                Toast.makeText(activity, "Failed ", Toast.LENGTH_LONG).show()
                 Log.i("failed","YES  $")
             }
 

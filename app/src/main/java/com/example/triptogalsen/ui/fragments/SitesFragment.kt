@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.triptogalsen.R
 import com.example.triptogalsen.api.TripToGalsen
@@ -33,14 +34,18 @@ class SitesFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
+        refreshLayoutSites.isRefreshing = true
+
         TripToGalsen.buildRetrofit().getSites().enqueue(object:
             Callback<List<Sites>> {
             override fun onFailure(call: Call<List<Sites>>, t: Throwable) {
-                Log.i("failed","YES  $")
+                Toast.makeText(activity, "FAILED LOADING", Toast.LENGTH_LONG).show()
+                refreshLayoutSites.isRefreshing = false
             }
 
             override fun onResponse(call: Call<List<Sites>>, response: Response<List<Sites>>) {
                 Log.i("failed","YES REPONSE ${response.body()}")
+                refreshLayoutSites.isRefreshing = false
                 my_sites_recycler_view.layoutManager = LinearLayoutManager(activity,
                   LinearLayoutManager.HORIZONTAL,false)
                 my_sites_recycler_view.adapter = SitesAdapter(response.body()!!)
