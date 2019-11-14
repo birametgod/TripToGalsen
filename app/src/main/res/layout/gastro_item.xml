@@ -4,19 +4,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/Widget.MaterialComponents.CardView"
     android:id="@+id/my_card_view_gastro"
-    android:layout_width="120dp"
-    android:layout_height="150dp"
+    android:layout_width="100dp"
+    android:layout_height="120dp"
     android:layout_marginLeft="@dimen/mtrl_card_spacing"
     android:layout_marginTop="@dimen/mtrl_card_spacing"
     android:layout_marginRight="@dimen/mtrl_card_spacing"
     android:layout_marginBottom="16dp"
     app:cardUseCompatPadding="false" app:cardElevation="8dp"
-    android:minHeight="150dp">
+    android:minHeight="120dp">
 
 <ImageView
     android:id="@+id/gastro_picture"
     android:layout_width="match_parent"
-    android:layout_height="130dp"
+    android:layout_height="100dp"
     android:scaleType="centerCrop" />
 
 <LinearLayout
@@ -35,10 +35,10 @@
     android:orientation="horizontal">
 
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="23dp"
         android:layout_height="15dp"
         android:layout_gravity="center"
-        android:src="@drawable/maps_and_flags"/>
+        android:src="@drawable/cutlery" />
 
     <TextView
         android:id="@+id/name_plat"

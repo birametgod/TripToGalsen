@@ -81,6 +81,11 @@ android:orientation="vertical">
     android:text="Sites Religieux"
     />
 
+    <fragment
+        android:id="@+id/fragment_location_religious"
+        android:name="com.example.triptogalsen.ui.fragments.ReligiousLocationFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 
 </LinearLayout>
