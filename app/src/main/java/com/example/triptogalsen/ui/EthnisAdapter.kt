@@ -9,7 +9,7 @@ import com.example.triptogalsen.models.EthnisModel
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.ethnis_item.view.*
 
-class EthnisAdapter(val ethnis : List<EthnisModel>) : RecyclerView.Adapter<EthnisAdapter.ViewHolder>(){
+class EthnisAdapter(val ethnis : List<EthnisModel>,val itemClickListener: View.OnClickListener) : RecyclerView.Adapter<EthnisAdapter.ViewHolder>(){
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val cardView = itemView.my_card_view_ethnis
@@ -30,7 +30,7 @@ class EthnisAdapter(val ethnis : List<EthnisModel>) : RecyclerView.Adapter<Ethni
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val ethni = ethnis[position]
-        //holder.cardView.setOnClickListener(itemClickListener)
+        holder.cardView.setOnClickListener(itemClickListener)
         holder.cardView.tag = position
         Picasso.get().load(ethni.image).into(holder.picture)
         holder.name.text = ethni.name

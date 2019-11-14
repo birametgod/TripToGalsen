@@ -11,26 +11,136 @@
     tools:context=".ui.fragments.ProfilFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="42dp"
+        android:src="@drawable/man"
+        app:layout_constraintBottom_toTopOf="@id/name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.261" />
+
+    <LinearLayout
         android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Name"
-        app:layout_constraintBottom_toTopOf="@id/signOut"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/firstName"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textStyle="bold"
+            android:textColor="#B33831"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            />
 
 
-    <TextView
-        android:id="@+id/email"
+        <TextView
+            android:id="@+id/name_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="le nom"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="8dp"/>
+
+        <LinearLayout
+            android:layout_width="295dp"
+            android:layout_height="2dp"
+            android:background="@color/colorGray" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/firstName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Email"
-        app:layout_constraintBottom_toTopOf="@id/signOut"
         app:layout_constraintTop_toBottomOf="@id/name"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/nationality"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textStyle="bold"
+            android:textColor="#B33831"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            />
+
+
+        <TextView
+            android:id="@+id/email_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="le mail"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="8dp"/>
+
+        <LinearLayout
+            android:layout_width="295dp"
+            android:layout_height="2dp"
+            android:background="@color/colorGray" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/nationality"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/firstName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/signOut"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nationalite"
+            android:textStyle="bold"
+            android:textColor="#B33831"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            />
+
+
+        <TextView
+            android:id="@+id/nationality_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="la nationalite"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="8dp"/>
+
+        <LinearLayout
+            android:layout_width="295dp"
+            android:layout_height="2dp"
+            android:background="@color/colorGray" />
+
+
+    </LinearLayout>
+
 
 
 
@@ -47,7 +157,8 @@
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/name"
+        app:layout_constraintTop_toBottomOf="@id/nationality"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:strokeColor="@color/colorGreen"
         app:strokeWidth="25dp" />
 

@@ -25,6 +25,9 @@ interface TripToGalsen {
     @GET("religieux.json")
     fun getReligiousLocation() : Call<List<ReligiousModel>>
 
+    @GET("dictionnaire.json")
+    fun getDico() : Call<List<DicoModel>>
+
     companion object {
         fun buildRetrofit() : TripToGalsen{
             return Retrofit.Builder()

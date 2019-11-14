@@ -9,7 +9,7 @@ import com.example.triptogalsen.models.ReligiousModel
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.religious_location_item.view.*
 
-class ReligiousLocationAdapter(val religiousLocation : List<ReligiousModel>) : RecyclerView.Adapter<ReligiousLocationAdapter.ViewHolder>(){
+class ReligiousLocationAdapter(val religiousLocation : List<ReligiousModel>,val itemClickListener: View.OnClickListener) : RecyclerView.Adapter<ReligiousLocationAdapter.ViewHolder>(){
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val cardView = itemView.my_card_view_religious_item
@@ -30,7 +30,7 @@ class ReligiousLocationAdapter(val religiousLocation : List<ReligiousModel>) : R
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val religiousLocation = religiousLocation[position]
-        //holder.cardView.setOnClickListener(itemClickListener)
+        holder.cardView.setOnClickListener(itemClickListener)
         holder.cardView.tag = position
         Picasso.get().load(religiousLocation.image).into(holder.picture)
         holder.name.text = religiousLocation.name

@@ -21,7 +21,7 @@ import retrofit2.Response
 /**
  * A simple [Fragment] subclass.
  */
-class SitesFragment : Fragment() {
+class SitesFragment : Fragment()  {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
