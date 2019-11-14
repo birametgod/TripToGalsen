@@ -14,15 +14,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HomeActivity"></activity>
+        <activity android:name=".ui.ItemViewActivity"
+            android:theme="@style/AppTheme.HomeScreen"></activity>
         <activity
-            android:name=".InscriptionActivity"
+            android:name=".ui.HomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.HomeScreen" />
+        <activity
+            android:name=".ui.InscriptionActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.ConnexionScreen" />
         <activity
-            android:name=".ConnexionActivity"
+            android:name=".ui.ConnexionActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.ConnexionScreen" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".ui.SplashActivity"
             android:theme="@style/AppTheme.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,7 +37,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".ui.MainActivity" />
     </application>
 
 </manifest>

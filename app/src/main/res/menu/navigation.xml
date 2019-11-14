@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/home"
+        android:title="Accueil"/>
+    <item
+        android:id="@+id/navigation_dico"
+        android:icon="@drawable/book"
+        android:title="Dico"/>
+    <item
+        android:id="@+id/navigation_culture"
+        android:icon="@drawable/senegal_cult"
+        android:title="Culture"/>
+    <item
+        android:id="@+id/navigation_profil"
+        android:icon="@drawable/man_user"
+        android:title="Profil"/>
+    </menu>

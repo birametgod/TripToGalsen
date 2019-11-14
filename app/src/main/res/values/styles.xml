@@ -12,12 +12,18 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:windowDisablePreview">true</item>
+        <item name="colorPrimaryDark">@color/colorWhite</item>
     </style>
 
     <style name="AppTheme.ConnexionScreen" parent="Theme.MaterialComponents.Light.NoActionBar">
 
         <item name="colorPrimary">@color/colorRedSenegal</item>
+        <item name="colorPrimaryDark">@color/colorRedSenegal</item>
     </style>
 
+    <style name="AppTheme.HomeScreen" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorRedSenegal</item>
+        <item name="colorPrimaryDark">@color/colorRedSenegal</item>
+    </style>
 
 </resources>

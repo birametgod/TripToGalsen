@@ -1,17 +1,18 @@
-package com.example.triptogalsen
+package com.example.triptogalsen.ui
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.TextView
+import android.view.View
 import android.widget.Toast
+import com.example.triptogalsen.R
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.wajahatkarim3.easyvalidation.core.view_ktx.nonEmpty
+import com.wajahatkarim3.easyvalidation.core.view_ktx.validEmail
 import kotlinx.android.synthetic.main.activity_connexion.*
-import kotlinx.android.synthetic.main.activity_inscription.*
-import kotlin.math.sign
 
-class ConnexionActivity : AppCompatActivity() {
+class ConnexionActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var auth: FirebaseAuth
 
@@ -20,20 +21,8 @@ class ConnexionActivity : AppCompatActivity() {
         setContentView(R.layout.activity_connexion)
 
         auth = FirebaseAuth.getInstance()
-
-        signUp.setOnClickListener {
-            val myIntent = Intent(this,InscriptionActivity::class.java)
-            startActivity(myIntent)
-        }
-
-        signIn.setOnClickListener {
-            val emailUser = loginInput.text
-            val passwordUser = passwordInput.text
-
-            signIn(emailUser.toString(),passwordUser.toString())
-        }
-
-
+        signIn.setOnClickListener(this)
+        signUp.setOnClickListener(this)
     }
 
     override fun onStart() {
@@ -41,7 +30,33 @@ class ConnexionActivity : AppCompatActivity() {
 
         // Check if user is signed in (non-null) and update UI accordingly.
         val currentUser = auth.currentUser
-        //updateUi(currentUser)
+        if(currentUser != null){
+            updateUi(currentUser)
+        }
+    }
+
+    override fun onClick(view: View) {
+        when(view.id){
+            R.id.signIn -> {
+                val isPasswordValid = passwordInput.nonEmpty(){
+                    passwordInput.error = "Ne doit pas être vide"
+                }
+
+                val isEmailValid = loginInput.validEmail {
+                    loginInput.error = "Mail invalid"
+                }
+
+                if (isPasswordValid && isEmailValid){
+                    signIn(loginInput.text.toString(),passwordInput.text.toString())
+                }
+
+            }
+            R.id.signUp -> {
+               val myIntent =
+                   SplashActivity.openInscriptionActivity(this)
+                startActivity(myIntent)
+            }
+        }
     }
 
     private fun signIn(email:String,password:String){
@@ -52,7 +67,7 @@ class ConnexionActivity : AppCompatActivity() {
                 val user = auth.currentUser
                 Toast.makeText(this, "Authentication success.",
                     Toast.LENGTH_SHORT).show()
-                updateUi()
+                updateUi(user)
             } else {
                 // If sign in fails, display a message to the user.
                 Log.w("SIGN IN", "signInWithEmail:failure", task.exception)
@@ -62,8 +77,10 @@ class ConnexionActivity : AppCompatActivity() {
         }
     }
 
-    private fun updateUi(){
-        val myIntent = Intent(this,HomeActivity::class.java)
+    private fun updateUi(user: FirebaseUser?){
+        Log.i("USER", "my user : ${user?.email}")
+        val myIntent = SplashActivity.openHomeActivity(this)
         startActivity(myIntent)
+        finish()
     }
 }
