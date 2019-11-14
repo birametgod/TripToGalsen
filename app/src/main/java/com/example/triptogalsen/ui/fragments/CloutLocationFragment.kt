@@ -44,7 +44,6 @@ class CloutLocationFragment : Fragment() {
             }
 
             override fun onResponse(call: Call<List<CloutLocationModel>>, response: Response<List<CloutLocationModel>>) {
-                Log.i("failed","YES REPONSE ${response.body()}")
                 my_recycler_view.layoutManager = LinearLayoutManager(activity,
                     LinearLayoutManager.HORIZONTAL,false)
                 my_recycler_view.adapter = CloutLocationAdapter(response.body()!!)

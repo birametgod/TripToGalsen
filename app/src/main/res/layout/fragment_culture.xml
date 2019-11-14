@@ -21,8 +21,8 @@ android:orientation="vertical">
     />
 
 <fragment
-    android:id="@+id/fragment_clout"
-    android:name="com.example.triptogalsen.ui.fragments.CloutLocationFragment"
+    android:id="@+id/fragment_touristique"
+    android:name="com.example.triptogalsen.ui.fragments.Touristiques"
     android:layout_width="match_parent"
     android:layout_height="wrap_content" />
 
@@ -40,11 +40,12 @@ android:orientation="vertical">
     android:text="Gastronomies"
     />
 
-<fragment
-    android:id="@+id/fragment_picture"
-    android:name="com.example.triptogalsen.ui.fragments.FamousPictureFragment"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"/>
+    <fragment
+        android:id="@+id/fragment_gastro"
+        android:name="com.example.triptogalsen.ui.fragments.GastroFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 
 <TextView
         android:id="@+id/ethnie_text"
@@ -60,11 +61,11 @@ android:orientation="vertical">
         android:text="Ethnies"
         />
 
-<fragment
-    android:id="@+id/fragment_site"
-    android:name="com.example.triptogalsen.ui.fragments.SitesFragment"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
+    <fragment
+        android:id="@+id/fragment_ethnis"
+        android:name="com.example.triptogalsen.ui.fragments.EthnisFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 <TextView
     android:id="@+id/religieux_text"
@@ -80,10 +81,6 @@ android:orientation="vertical">
     android:text="Sites Religieux"
     />
 
-<fragment
-    android:id="@+id/fragment_religieux"
-    android:name="com.example.triptogalsen.ui.fragments.SitesFragment"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
+
 
 </LinearLayout>

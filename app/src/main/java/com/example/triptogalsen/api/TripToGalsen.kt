@@ -1,6 +1,8 @@
 package com.example.triptogalsen.api
 
 import com.example.triptogalsen.models.CloutLocationModel
+import com.example.triptogalsen.models.EthnisModel
+import com.example.triptogalsen.models.GastroModel
 import com.example.triptogalsen.models.Sites
 import retrofit2.Call
 import retrofit2.Retrofit
@@ -16,6 +18,12 @@ interface TripToGalsen {
 
     @GET("sites.json")
     fun getSites() : Call<List<Sites>>
+
+    @GET("cuisine.json")
+    fun getGastro() : Call<List<GastroModel>>
+
+    @GET("ethnis.json")
+    fun getEthnis() : Call<List<EthnisModel>>
 
     companion object {
         fun buildRetrofit() : TripToGalsen{

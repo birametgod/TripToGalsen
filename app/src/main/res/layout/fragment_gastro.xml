@@ -4,12 +4,12 @@ xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="wrap_content"
 android:orientation="horizontal"
-tools:context=".ui.fragments.Touristiques">
+tools:context=".ui.fragments.GastroFragment">
 
 <androidx.recyclerview.widget.RecyclerView
-    android:id="@+id/my_touristique_recycler_view"
+    android:id="@+id/my_gastro_recycler_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:listitem="@layout/touriste_item"/>
+    tools:listitem="@layout/gastro_item"/>
 
 </RelativeLayout>
