@@ -10,12 +10,12 @@
     android:layout_marginTop="@dimen/mtrl_card_spacing"
     android:layout_marginRight="@dimen/mtrl_card_spacing"
     android:layout_marginBottom="@dimen/mtrl_card_spacing"
-    android:minHeight="200dp">
+    android:minHeight="150dp">
 
     <ImageView
         android:id="@+id/picture_item_famous"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="130dp"
         android:scaleType="centerCrop" />
 
     <LinearLayout
@@ -38,7 +38,6 @@
             android:layout_height="15dp"
             android:src="@drawable/maps_and_flags"
             android:layout_gravity="center"/>
-
 
         <TextView
             android:id="@+id/location_picture"
