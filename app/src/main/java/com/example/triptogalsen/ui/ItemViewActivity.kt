@@ -22,7 +22,6 @@ class ItemViewActivity : AppCompatActivity() {
         setContentView(R.layout.activity_item_view)
 
         setSupportActionBar(my_toolbar)
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         val description = intent.getStringExtra(EXTRA_DESCRIPTION)
         val image = intent.getStringExtra(EXTRA_IMAGE)

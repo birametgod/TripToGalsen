@@ -9,7 +9,7 @@ import com.example.triptogalsen.models.Sites
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.site_item.view.*
 
-class SitesAdapter(val sites : List<Sites>) : RecyclerView.Adapter<SitesAdapter.ViewHolder>(){
+class SitesAdapter(val sites : List<Sites>,val itemClickListener: View.OnClickListener) : RecyclerView.Adapter<SitesAdapter.ViewHolder>(){
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val cardView = itemView.my_card_view_picture
@@ -30,8 +30,8 @@ class SitesAdapter(val sites : List<Sites>) : RecyclerView.Adapter<SitesAdapter.
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val site = sites[position]
-        //holder.cardView.setOnClickListener(itemClickListener)
         holder.cardView.tag = position
+        holder.cardView.setOnClickListener(itemClickListener)
         Picasso.get().load(site.image).into(holder.picture)
         holder.location.text = site.name
     }

@@ -9,7 +9,7 @@ import com.example.triptogalsen.models.CloutLocationModel
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.clout_location_item.view.*
 
-class CloutLocationAdapter(val cloutLocation : List<CloutLocationModel>) : RecyclerView.Adapter<CloutLocationAdapter.ViewHolder>(){
+class CloutLocationAdapter(val cloutLocation : List<CloutLocationModel>, val itemClickListener: View.OnClickListener ) : RecyclerView.Adapter<CloutLocationAdapter.ViewHolder>(){
 
     class ViewHolder(itemView:View) : RecyclerView.ViewHolder(itemView){
         val cardView = itemView.my_card_view
@@ -30,8 +30,8 @@ class CloutLocationAdapter(val cloutLocation : List<CloutLocationModel>) : Recyc
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val cloutLocation = cloutLocation[position]
-        //holder.cardView.setOnClickListener(itemClickListener)
         holder.cardView.tag = position
+        holder.cardView.setOnClickListener(itemClickListener)
         Picasso.get().load(cloutLocation.image).into(holder.picture)
         holder.location.text = cloutLocation.location
     }

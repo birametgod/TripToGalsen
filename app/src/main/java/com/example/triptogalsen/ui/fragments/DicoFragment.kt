@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.triptogalsen.R
 import com.example.triptogalsen.api.TripToGalsen
 import com.example.triptogalsen.models.DicoModel
@@ -23,6 +24,9 @@ import retrofit2.Response
  */
 class DicoFragment : Fragment() {
 
+    private lateinit var dicoAdapter: DicoAdapter
+    private lateinit var myRecyclerView: RecyclerView
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,9 +35,10 @@ class DicoFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_dico, container, false)
     }
 
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
+        myRecyclerView = dico_recycler_view
         refreshLayoutDicoLocation.isRefreshing = true
 
         TripToGalsen.buildRetrofit().getDico().enqueue(object:
@@ -45,8 +50,10 @@ class DicoFragment : Fragment() {
 
             override fun onResponse(call: Call<List<DicoModel>>, response: Response<List<DicoModel>>) {
                 refreshLayoutDicoLocation.isRefreshing = false
-                dico_recycler_view.layoutManager = LinearLayoutManager(activity)
-                dico_recycler_view.adapter = DicoAdapter(response.body()!!)
+                myRecyclerView.layoutManager = LinearLayoutManager(activity)
+                dicoAdapter = DicoAdapter(response.body()!!)
+                dicoAdapter.notifyDataSetChanged()
+                dico_recycler_view.adapter = dicoAdapter
             }
 
         })
